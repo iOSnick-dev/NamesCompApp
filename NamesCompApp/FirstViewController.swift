@@ -17,7 +17,13 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
      
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVS = segue.destination as? ResultViewController else {return}
+        destinationVS.firstName = yourNameTF.text
+        destinationVS.secondName = partnerNameTF.text
+    }
+    
+    
     @IBAction func resultButtonTapped() {
     }
     
